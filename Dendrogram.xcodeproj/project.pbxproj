@@ -1,0 +1,751 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FAA273F6786ECABBC143DAAB /* libPods-Dendrogram.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A0D709C10513A5DF5E66D9 /* libPods-Dendrogram.a */; };
+		FC1767211EA8545B00C0FFB5 /* NSView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1767201EA8545B00C0FFB5 /* NSView+Frame.m */; };
+		FC1767251EA88C0B00C0FFB5 /* ContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1767241EA88C0B00C0FFB5 /* ContentController.m */; };
+		FC1767281EA88CE300C0FFB5 /* CellView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1767271EA88CE300C0FFB5 /* CellView.m */; };
+		FC17672B1EA8BDE300C0FFB5 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC17672A1EA8BDE300C0FFB5 /* MainController.m */; };
+		FC95E8651EA4B81600833545 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC95E8641EA4B81600833545 /* AppDelegate.m */; };
+		FC95E8681EA4B81600833545 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FC95E8671EA4B81600833545 /* main.m */; };
+		FC95E86D1EA4B81600833545 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC95E86C1EA4B81600833545 /* Assets.xcassets */; };
+		FC95E8701EA4B81600833545 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC95E86E1EA4B81600833545 /* Main.storyboard */; };
+		FC95E87B1EA4B81600833545 /* DendrogramTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC95E87A1EA4B81600833545 /* DendrogramTests.m */; };
+		FC95E8861EA4B81600833545 /* DendrogramUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC95E8851EA4B81600833545 /* DendrogramUITests.m */; };
+		FC9B99161EA75268002D31B3 /* DendrogramEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9B990A1EA75268002D31B3 /* DendrogramEntity.m */; };
+		FC9B99171EA75268002D31B3 /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9B990F1EA75268002D31B3 /* MainVC.m */; };
+		FC9B99181EA75268002D31B3 /* MainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC9B99101EA75268002D31B3 /* MainVC.xib */; };
+		FC9B99191EA75268002D31B3 /* MainWC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9B99121EA75268002D31B3 /* MainWC.m */; };
+		FC9B991A1EA75268002D31B3 /* MainMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9B99151EA75268002D31B3 /* MainMenuView.m */; };
+		FC9B991D1EA7532F002D31B3 /* ContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9B991C1EA7532F002D31B3 /* ContentView.m */; };
+		FC9B99201EA75449002D31B3 /* CellMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9B991F1EA75449002D31B3 /* CellMenuView.m */; };
+		FC9B99231EA75680002D31B3 /* InfoEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9B99221EA75680002D31B3 /* InfoEntity.m */; };
+		FC9B99271EA7587D002D31B3 /* MainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9B99261EA7587D002D31B3 /* MainModel.m */; };
+		FC9B992F1EA76605002D31B3 /* backgroundImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FC9B992E1EA76605002D31B3 /* backgroundImage.jpg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FC95E8771EA4B81600833545 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC95E8581EA4B81600833545 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FC95E85F1EA4B81600833545;
+			remoteInfo = Dendrogram;
+		};
+		FC95E8821EA4B81600833545 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC95E8581EA4B81600833545 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FC95E85F1EA4B81600833545;
+			remoteInfo = Dendrogram;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		26A0D709C10513A5DF5E66D9 /* libPods-Dendrogram.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Dendrogram.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		335B8C2CC4FA56096B0AAAEE /* Pods-Dendrogram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dendrogram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dendrogram/Pods-Dendrogram.debug.xcconfig"; sourceTree = "<group>"; };
+		6888B14B795257F7A039A1CE /* Pods-Dendrogram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dendrogram.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dendrogram/Pods-Dendrogram.release.xcconfig"; sourceTree = "<group>"; };
+		FC17671F1EA8545B00C0FFB5 /* NSView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+Frame.h"; sourceTree = "<group>"; };
+		FC1767201EA8545B00C0FFB5 /* NSView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+Frame.m"; sourceTree = "<group>"; };
+		FC1767231EA88C0B00C0FFB5 /* ContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentController.h; sourceTree = "<group>"; };
+		FC1767241EA88C0B00C0FFB5 /* ContentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentController.m; sourceTree = "<group>"; };
+		FC1767261EA88CE300C0FFB5 /* CellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellView.h; sourceTree = "<group>"; };
+		FC1767271EA88CE300C0FFB5 /* CellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellView.m; sourceTree = "<group>"; };
+		FC1767291EA8BDE300C0FFB5 /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
+		FC17672A1EA8BDE300C0FFB5 /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
+		FC95E8601EA4B81600833545 /* Dendrogram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dendrogram.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC95E8631EA4B81600833545 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FC95E8641EA4B81600833545 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FC95E8671EA4B81600833545 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FC95E86C1EA4B81600833545 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FC95E86F1EA4B81600833545 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FC95E8711EA4B81600833545 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC95E8761EA4B81600833545 /* DendrogramTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DendrogramTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC95E87A1EA4B81600833545 /* DendrogramTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DendrogramTests.m; sourceTree = "<group>"; };
+		FC95E87C1EA4B81600833545 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC95E8811EA4B81600833545 /* DendrogramUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DendrogramUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC95E8851EA4B81600833545 /* DendrogramUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DendrogramUITests.m; sourceTree = "<group>"; };
+		FC95E8871EA4B81600833545 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC9B99091EA75268002D31B3 /* DendrogramEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DendrogramEntity.h; sourceTree = "<group>"; };
+		FC9B990A1EA75268002D31B3 /* DendrogramEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DendrogramEntity.m; sourceTree = "<group>"; };
+		FC9B990C1EA75268002D31B3 /* Macro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
+		FC9B990E1EA75268002D31B3 /* MainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainVC.h; sourceTree = "<group>"; };
+		FC9B990F1EA75268002D31B3 /* MainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainVC.m; sourceTree = "<group>"; };
+		FC9B99101EA75268002D31B3 /* MainVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainVC.xib; sourceTree = "<group>"; };
+		FC9B99111EA75268002D31B3 /* MainWC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWC.h; sourceTree = "<group>"; };
+		FC9B99121EA75268002D31B3 /* MainWC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWC.m; sourceTree = "<group>"; };
+		FC9B99141EA75268002D31B3 /* MainMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuView.h; sourceTree = "<group>"; };
+		FC9B99151EA75268002D31B3 /* MainMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuView.m; sourceTree = "<group>"; };
+		FC9B991B1EA7532F002D31B3 /* ContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentView.h; sourceTree = "<group>"; };
+		FC9B991C1EA7532F002D31B3 /* ContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentView.m; sourceTree = "<group>"; };
+		FC9B991E1EA75449002D31B3 /* CellMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellMenuView.h; sourceTree = "<group>"; };
+		FC9B991F1EA75449002D31B3 /* CellMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellMenuView.m; sourceTree = "<group>"; };
+		FC9B99211EA75680002D31B3 /* InfoEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoEntity.h; sourceTree = "<group>"; };
+		FC9B99221EA75680002D31B3 /* InfoEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoEntity.m; sourceTree = "<group>"; };
+		FC9B99251EA7587D002D31B3 /* MainModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainModel.h; path = Model/MainModel.h; sourceTree = "<group>"; };
+		FC9B99261EA7587D002D31B3 /* MainModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainModel.m; path = Model/MainModel.m; sourceTree = "<group>"; };
+		FC9B992E1EA76605002D31B3 /* backgroundImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backgroundImage.jpg; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FC95E85D1EA4B81600833545 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAA273F6786ECABBC143DAAB /* libPods-Dendrogram.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC95E8731EA4B81600833545 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC95E87E1EA4B81600833545 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CB533C1F1E2667E63E8D50B3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				335B8C2CC4FA56096B0AAAEE /* Pods-Dendrogram.debug.xcconfig */,
+				6888B14B795257F7A039A1CE /* Pods-Dendrogram.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DCF7CB43BBA598ED949BC736 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				26A0D709C10513A5DF5E66D9 /* libPods-Dendrogram.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FC1767221EA88BC600C0FFB5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FC1767231EA88C0B00C0FFB5 /* ContentController.h */,
+				FC1767241EA88C0B00C0FFB5 /* ContentController.m */,
+				FC1767291EA8BDE300C0FFB5 /* MainController.h */,
+				FC17672A1EA8BDE300C0FFB5 /* MainController.m */,
+			);
+			name = Controller;
+			path = Dendrogram/Class/Controller;
+			sourceTree = SOURCE_ROOT;
+		};
+		FC95E8571EA4B81600833545 = {
+			isa = PBXGroup;
+			children = (
+				FC95E8621EA4B81600833545 /* Dendrogram */,
+				FC95E8791EA4B81600833545 /* DendrogramTests */,
+				FC95E8841EA4B81600833545 /* DendrogramUITests */,
+				FC95E8611EA4B81600833545 /* Products */,
+				CB533C1F1E2667E63E8D50B3 /* Pods */,
+				DCF7CB43BBA598ED949BC736 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FC95E8611EA4B81600833545 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FC95E8601EA4B81600833545 /* Dendrogram.app */,
+				FC95E8761EA4B81600833545 /* DendrogramTests.xctest */,
+				FC95E8811EA4B81600833545 /* DendrogramUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FC95E8621EA4B81600833545 /* Dendrogram */ = {
+			isa = PBXGroup;
+			children = (
+				FC9B99061EA75268002D31B3 /* Class */,
+				FC9B992D1EA76605002D31B3 /* Resources */,
+				FC95E8631EA4B81600833545 /* AppDelegate.h */,
+				FC95E8641EA4B81600833545 /* AppDelegate.m */,
+				FC95E86C1EA4B81600833545 /* Assets.xcassets */,
+				FC95E86E1EA4B81600833545 /* Main.storyboard */,
+				FC95E8711EA4B81600833545 /* Info.plist */,
+				FC95E8661EA4B81600833545 /* Supporting Files */,
+			);
+			path = Dendrogram;
+			sourceTree = "<group>";
+		};
+		FC95E8661EA4B81600833545 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FC95E8671EA4B81600833545 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FC95E8791EA4B81600833545 /* DendrogramTests */ = {
+			isa = PBXGroup;
+			children = (
+				FC95E87A1EA4B81600833545 /* DendrogramTests.m */,
+				FC95E87C1EA4B81600833545 /* Info.plist */,
+			);
+			path = DendrogramTests;
+			sourceTree = "<group>";
+		};
+		FC95E8841EA4B81600833545 /* DendrogramUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FC95E8851EA4B81600833545 /* DendrogramUITests.m */,
+				FC95E8871EA4B81600833545 /* Info.plist */,
+			);
+			path = DendrogramUITests;
+			sourceTree = "<group>";
+		};
+		FC9B99061EA75268002D31B3 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				FC9B99241EA757AC002D31B3 /* Model */,
+				FC9B99071EA75268002D31B3 /* Commons */,
+				FC9B99081EA75268002D31B3 /* Entity */,
+				FC9B990B1EA75268002D31B3 /* Macro */,
+				FC9B990D1EA75268002D31B3 /* Main */,
+				FC9B99131EA75268002D31B3 /* View */,
+				FC1767221EA88BC600C0FFB5 /* Controller */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		FC9B99071EA75268002D31B3 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				FC17671F1EA8545B00C0FFB5 /* NSView+Frame.h */,
+				FC1767201EA8545B00C0FFB5 /* NSView+Frame.m */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		FC9B99081EA75268002D31B3 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				FC9B99091EA75268002D31B3 /* DendrogramEntity.h */,
+				FC9B990A1EA75268002D31B3 /* DendrogramEntity.m */,
+				FC9B99211EA75680002D31B3 /* InfoEntity.h */,
+				FC9B99221EA75680002D31B3 /* InfoEntity.m */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		FC9B990B1EA75268002D31B3 /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+				FC9B990C1EA75268002D31B3 /* Macro.h */,
+			);
+			path = Macro;
+			sourceTree = "<group>";
+		};
+		FC9B990D1EA75268002D31B3 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				FC9B990E1EA75268002D31B3 /* MainVC.h */,
+				FC9B990F1EA75268002D31B3 /* MainVC.m */,
+				FC9B99101EA75268002D31B3 /* MainVC.xib */,
+				FC9B99111EA75268002D31B3 /* MainWC.h */,
+				FC9B99121EA75268002D31B3 /* MainWC.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		FC9B99131EA75268002D31B3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FC9B99141EA75268002D31B3 /* MainMenuView.h */,
+				FC9B99151EA75268002D31B3 /* MainMenuView.m */,
+				FC9B991B1EA7532F002D31B3 /* ContentView.h */,
+				FC9B991C1EA7532F002D31B3 /* ContentView.m */,
+				FC9B991E1EA75449002D31B3 /* CellMenuView.h */,
+				FC9B991F1EA75449002D31B3 /* CellMenuView.m */,
+				FC1767261EA88CE300C0FFB5 /* CellView.h */,
+				FC1767271EA88CE300C0FFB5 /* CellView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FC9B99241EA757AC002D31B3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FC9B99251EA7587D002D31B3 /* MainModel.h */,
+				FC9B99261EA7587D002D31B3 /* MainModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		FC9B992D1EA76605002D31B3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FC9B992E1EA76605002D31B3 /* backgroundImage.jpg */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FC95E85F1EA4B81600833545 /* Dendrogram */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC95E88A1EA4B81600833545 /* Build configuration list for PBXNativeTarget "Dendrogram" */;
+			buildPhases = (
+				E27B19619355565184041F52 /* [CP] Check Pods Manifest.lock */,
+				FC95E85C1EA4B81600833545 /* Sources */,
+				FC95E85D1EA4B81600833545 /* Frameworks */,
+				FC95E85E1EA4B81600833545 /* Resources */,
+				0013032B9CF8748261258556 /* [CP] Embed Pods Frameworks */,
+				E50671F747673A6E2BA99441 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Dendrogram;
+			productName = Dendrogram;
+			productReference = FC95E8601EA4B81600833545 /* Dendrogram.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FC95E8751EA4B81600833545 /* DendrogramTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC95E88D1EA4B81600833545 /* Build configuration list for PBXNativeTarget "DendrogramTests" */;
+			buildPhases = (
+				FC95E8721EA4B81600833545 /* Sources */,
+				FC95E8731EA4B81600833545 /* Frameworks */,
+				FC95E8741EA4B81600833545 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FC95E8781EA4B81600833545 /* PBXTargetDependency */,
+			);
+			name = DendrogramTests;
+			productName = DendrogramTests;
+			productReference = FC95E8761EA4B81600833545 /* DendrogramTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FC95E8801EA4B81600833545 /* DendrogramUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC95E8901EA4B81600833545 /* Build configuration list for PBXNativeTarget "DendrogramUITests" */;
+			buildPhases = (
+				FC95E87D1EA4B81600833545 /* Sources */,
+				FC95E87E1EA4B81600833545 /* Frameworks */,
+				FC95E87F1EA4B81600833545 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FC95E8831EA4B81600833545 /* PBXTargetDependency */,
+			);
+			name = DendrogramUITests;
+			productName = DendrogramUITests;
+			productReference = FC95E8811EA4B81600833545 /* DendrogramUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FC95E8581EA4B81600833545 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = cxh;
+				TargetAttributes = {
+					FC95E85F1EA4B81600833545 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					FC95E8751EA4B81600833545 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = FC95E85F1EA4B81600833545;
+					};
+					FC95E8801EA4B81600833545 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = FC95E85F1EA4B81600833545;
+					};
+				};
+			};
+			buildConfigurationList = FC95E85B1EA4B81600833545 /* Build configuration list for PBXProject "Dendrogram" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FC95E8571EA4B81600833545;
+			productRefGroup = FC95E8611EA4B81600833545 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FC95E85F1EA4B81600833545 /* Dendrogram */,
+				FC95E8751EA4B81600833545 /* DendrogramTests */,
+				FC95E8801EA4B81600833545 /* DendrogramUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FC95E85E1EA4B81600833545 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC9B99181EA75268002D31B3 /* MainVC.xib in Resources */,
+				FC9B992F1EA76605002D31B3 /* backgroundImage.jpg in Resources */,
+				FC95E86D1EA4B81600833545 /* Assets.xcassets in Resources */,
+				FC95E8701EA4B81600833545 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC95E8741EA4B81600833545 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC95E87F1EA4B81600833545 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0013032B9CF8748261258556 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Dendrogram/Pods-Dendrogram-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E27B19619355565184041F52 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E50671F747673A6E2BA99441 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Dendrogram/Pods-Dendrogram-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FC95E85C1EA4B81600833545 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC1767251EA88C0B00C0FFB5 /* ContentController.m in Sources */,
+				FC9B991D1EA7532F002D31B3 /* ContentView.m in Sources */,
+				FC9B99201EA75449002D31B3 /* CellMenuView.m in Sources */,
+				FC9B99271EA7587D002D31B3 /* MainModel.m in Sources */,
+				FC1767211EA8545B00C0FFB5 /* NSView+Frame.m in Sources */,
+				FC9B991A1EA75268002D31B3 /* MainMenuView.m in Sources */,
+				FC1767281EA88CE300C0FFB5 /* CellView.m in Sources */,
+				FC9B99231EA75680002D31B3 /* InfoEntity.m in Sources */,
+				FC9B99161EA75268002D31B3 /* DendrogramEntity.m in Sources */,
+				FC9B99171EA75268002D31B3 /* MainVC.m in Sources */,
+				FC95E8681EA4B81600833545 /* main.m in Sources */,
+				FC95E8651EA4B81600833545 /* AppDelegate.m in Sources */,
+				FC17672B1EA8BDE300C0FFB5 /* MainController.m in Sources */,
+				FC9B99191EA75268002D31B3 /* MainWC.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC95E8721EA4B81600833545 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC95E87B1EA4B81600833545 /* DendrogramTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC95E87D1EA4B81600833545 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC95E8861EA4B81600833545 /* DendrogramUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FC95E8781EA4B81600833545 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FC95E85F1EA4B81600833545 /* Dendrogram */;
+			targetProxy = FC95E8771EA4B81600833545 /* PBXContainerItemProxy */;
+		};
+		FC95E8831EA4B81600833545 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FC95E85F1EA4B81600833545 /* Dendrogram */;
+			targetProxy = FC95E8821EA4B81600833545 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FC95E86E1EA4B81600833545 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FC95E86F1EA4B81600833545 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FC95E8881EA4B81600833545 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		FC95E8891EA4B81600833545 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		FC95E88B1EA4B81600833545 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 335B8C2CC4FA56096B0AAAEE /* Pods-Dendrogram.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
+				);
+				INFOPLIST_FILE = Dendrogram/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = www.baidu.Dendrogram;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FC95E88C1EA4B81600833545 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6888B14B795257F7A039A1CE /* Pods-Dendrogram.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
+				);
+				INFOPLIST_FILE = Dendrogram/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = www.baidu.Dendrogram;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FC95E88E1EA4B81600833545 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = DendrogramTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = www.baidu.DendrogramTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dendrogram.app/Contents/MacOS/Dendrogram";
+			};
+			name = Debug;
+		};
+		FC95E88F1EA4B81600833545 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = DendrogramTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = www.baidu.DendrogramTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dendrogram.app/Contents/MacOS/Dendrogram";
+			};
+			name = Release;
+		};
+		FC95E8911EA4B81600833545 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = DendrogramUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = www.baidu.DendrogramUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Dendrogram;
+			};
+			name = Debug;
+		};
+		FC95E8921EA4B81600833545 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = DendrogramUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = www.baidu.DendrogramUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Dendrogram;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FC95E85B1EA4B81600833545 /* Build configuration list for PBXProject "Dendrogram" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC95E8881EA4B81600833545 /* Debug */,
+				FC95E8891EA4B81600833545 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC95E88A1EA4B81600833545 /* Build configuration list for PBXNativeTarget "Dendrogram" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC95E88B1EA4B81600833545 /* Debug */,
+				FC95E88C1EA4B81600833545 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC95E88D1EA4B81600833545 /* Build configuration list for PBXNativeTarget "DendrogramTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC95E88E1EA4B81600833545 /* Debug */,
+				FC95E88F1EA4B81600833545 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC95E8901EA4B81600833545 /* Build configuration list for PBXNativeTarget "DendrogramUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC95E8911EA4B81600833545 /* Debug */,
+				FC95E8921EA4B81600833545 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FC95E8581EA4B81600833545 /* Project object */;
+}
