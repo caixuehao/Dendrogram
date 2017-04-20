@@ -32,7 +32,7 @@
 
 -(void)setEntity:(DendrogramEntity *)entity{
     _entity = entity;
-    [self setTitle:entity.name];
+    [self setTitle:entity.title];
     
 }
 

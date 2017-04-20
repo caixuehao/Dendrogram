@@ -9,7 +9,7 @@
 #ifndef Macro_h
 #define Macro_h
 
-
+#define FileTypeName @"json"
 
 #define SSize   [NSScreen mainScreen].frame.size
 

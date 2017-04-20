@@ -15,6 +15,6 @@
 
 @property(nonatomic,strong)NSMutableDictionary* sourceData;
 
-
+-(void)save:(NSString*)path;
 
 @end

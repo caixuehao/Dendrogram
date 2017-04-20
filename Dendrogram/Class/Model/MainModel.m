@@ -21,19 +21,11 @@ static MainModel *mainModelShare;
 
 -(instancetype)init{
     if (self = [super init]) {
-        _infoEntity = [[InfoEntity alloc] init];
-        for (int i = 0; i < 3; i++) {
-            DendrogramEntity* de = [[DendrogramEntity alloc] init];
-            de.name = [NSString stringWithFormat:@"children%d",i];
-            [_infoEntity.rootDendrogram.children addObject:de];
-        }
-        [_infoEntity.rootDendrogram.children[0].children addObject:[[DendrogramEntity alloc] init]];
-        [_infoEntity.rootDendrogram.children[0].children addObject:[[DendrogramEntity alloc] init]];
-        [_infoEntity.rootDendrogram.children[1].children addObject:[[DendrogramEntity alloc] init]];
-        [_infoEntity.rootDendrogram.children[1].children[0].children addObject:[[DendrogramEntity alloc] init]];
+      _infoEntity = [[InfoEntity alloc] init];
+      [self addParentCellData:self.rootDendrogram];
         
     }
-    [self addParentCellData:self.rootDendrogram];
+    
     return self;
 }
 
@@ -52,7 +44,7 @@ static MainModel *mainModelShare;
 
 -(DendrogramEntity*)addNullCell:(DendrogramEntity*)entity{
     DendrogramEntity* de = [[DendrogramEntity alloc] init];
-    de.name = [NSString stringWithFormat:@"children%lu",entity.children.count];
+    de.title = [NSString stringWithFormat:@"children%lu",entity.children.count];
     [entity.children addObject:de];
     de.parentCell = entity;
     return de;    
@@ -63,7 +55,13 @@ static MainModel *mainModelShare;
 }
 
 //保存文件
--(void)saveFile{
+-(void)setFilePath:(NSString *)filePath{
+    if (_filePath.length==0) {
+        _filePath = filePath;
+    }
+}
 
+-(void)saveFile{
+    [_infoEntity save:_filePath];
 }
 @end

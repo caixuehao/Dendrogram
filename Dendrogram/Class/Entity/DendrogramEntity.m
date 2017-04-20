@@ -16,4 +16,18 @@
     }
     return self;
 }
+
+-(NSMutableDictionary*)getSaveDic{
+    NSMutableDictionary* maindic = [[NSMutableDictionary alloc] init];
+    [maindic setObject:_title forKey:@"title"];
+    for (NSString* key in _data) {
+        [maindic setObject:[_data objectForKey:key] forKey:key];
+    }
+    NSMutableArray<NSMutableDictionary *>* savechildren = [[NSMutableArray alloc] init];
+    for (int i =0;i < _children.count;i++) {
+        [savechildren addObject:[_children[i] getSaveDic]];
+    }
+    [maindic setObject:savechildren forKey:@"children"];
+    return maindic;
+}
 @end

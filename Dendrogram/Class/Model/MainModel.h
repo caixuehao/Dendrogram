@@ -24,4 +24,6 @@
 -(DendrogramEntity*)addNullCell:(DendrogramEntity*)entity;
 //删除一个节点
 -(void)removeCell:(DendrogramEntity*)entity;
+
+-(void)saveFile;
 @end

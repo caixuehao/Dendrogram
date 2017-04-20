@@ -34,7 +34,7 @@
         _selectedCell = cell;
         _selectedEntity = cell.entity;
     }
-    NSLog(@"%@",cell.entity.name);
+    NSLog(@"%@",cell.entity.title);
 }
 
 

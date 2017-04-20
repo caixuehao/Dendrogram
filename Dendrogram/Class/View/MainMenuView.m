@@ -7,12 +7,15 @@
 //
 
 #import "MainMenuView.h"
+#import "MainController.h"
 
-@implementation MainMenuView
+@implementation MainMenuView{
+    MainController* mainController;
+}
 
 -(instancetype)init{
     if (self = [super init]) {
-        
+        mainController = [[MainController alloc] init];
     }
     return self;
 }

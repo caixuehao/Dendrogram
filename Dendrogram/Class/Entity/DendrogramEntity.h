@@ -10,7 +10,7 @@
 
 @interface DendrogramEntity : NSObject
 
-@property(nonatomic,strong)NSString* name;
+@property(nonatomic,strong)NSString* title;
 
 @property(nonatomic,strong)NSMutableDictionary* data;
 
@@ -18,4 +18,6 @@
 
 @property(nonatomic,weak)DendrogramEntity * parentCell;
 
+
+-(NSMutableDictionary*)getSaveDic;
 @end
