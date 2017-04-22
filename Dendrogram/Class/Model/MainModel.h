@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "InfoEntity.h"
+#import "ContentController.h"
 
 @interface MainModel : NSObject
 
@@ -18,6 +19,14 @@
 
 @property(nonatomic,weak,readonly)DendrogramEntity* rootDendrogram;
 
+@property(nonatomic,weak)ContentController* contentController;
+
+@property(nonatomic,weak,readonly)DendrogramEntity* selectedEntity;
+//数据类型数组
+@property(nonatomic,strong,readonly)NSArray<NSString*>* dataTypeNameArr;
+//源数据中的字典数组
+@property(nonatomic,strong,readonly)NSArray<NSString*>* dicKeyArr;
+
 +(MainModel*)share;
 
 //添加一个空节点
@@ -25,5 +34,13 @@
 //删除一个节点
 -(void)removeCell:(DendrogramEntity*)entity;
 
+//存取文件
 -(void)saveFile;
+-(void)readFile:(NSString*)path;
+
+//添加字段
+-(void)addkey:(NSString*)key  dataType:(NSInteger)dataType rootDic:(NSString*)rootDic;
+
+
+
 @end

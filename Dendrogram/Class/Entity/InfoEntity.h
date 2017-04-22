@@ -8,13 +8,29 @@
 
 #import <Foundation/Foundation.h>
 #import "DendrogramEntity.h"
-@interface InfoEntity : NSObject
 
+typedef NS_ENUM(NSInteger,DataType){
+    DataTypeNumber = 0,
+    DataTypeString = 1,
+    DataTypeNumBerArr = 2,
+    DataTypeStringArr = 3,
+    DataTypeDictionary = 4
+};
+
+@interface InfoEntity : NSObject
 
 @property(nonatomic,strong)DendrogramEntity* rootDendrogram;
 
 @property(nonatomic,strong)NSMutableDictionary* sourceData;
 
+@property(nonatomic,strong,readonly)NSArray<NSString*>* dataTypeNameArr;
+
+@property(nonatomic,strong,readonly)NSMutableArray<NSString*>* dicKeyArr;
+
 -(void)save:(NSString*)path;
+
+-(instancetype)initWithFile:(NSString*)path;
+
+-(void)updataSourceDataDicArr;
 
 @end

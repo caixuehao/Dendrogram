@@ -16,7 +16,7 @@
 #define DefaultWidth 1000
 #define DefaultHeight 618
 #define MinWidth 530
-#define MinHeight 312
+#define MinHeight 618
 
 
 
@@ -32,6 +32,8 @@
 
 #define KeyUpEvent @"KeyUpEvent"
 #define UpdateContenView @"UpdateContenView"
+#define UpdateMainView @"UpdateMainView"
 #define SelectedCellChange @"SelectedCellChange"
+
 
 #endif /* Macro_h */

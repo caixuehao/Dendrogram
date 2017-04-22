@@ -37,21 +37,21 @@
     self.view.wantsLayer = YES;
     
     mainMenuView = ({
-        NSView* view = [[MainMenuView alloc] init];
-        view.wantsLayer = YES;
-        view.layer.backgroundColor = CColor(255,255,200,1).CGColor;
+        MainMenuView* view = [[MainMenuView alloc] init];
+        view.view.wantsLayer = YES;
+        view.view.layer.backgroundColor = CColor(255,255,200,1).CGColor;
         [self.view addSubview:view];
         view;
     });
     contentView = ({
-        NSView* view = [[ContentView alloc] init];
-        view.wantsLayer = YES;
-        view.layer.backgroundColor = CColor(255,200,255,1).CGColor;
+        ContentView* view = [[ContentView alloc] init];
+//        view.view.wantsLayer = YES;
+//        view.view.layer.backgroundColor = CColor(255,200,255,1).CGColor;
         [self.view addSubview:view];
         view;
     });
     cellMenuView = ({
-        NSView* view = [[CellMenuView alloc] init];
+        CellMenuView* view = [[CellMenuView alloc] init];
         view.wantsLayer = YES;
         view.layer.backgroundColor = CColor(200,255,255,1).CGColor;
         [self.view addSubview:view];

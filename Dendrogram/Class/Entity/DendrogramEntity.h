@@ -20,4 +20,7 @@
 
 
 -(NSMutableDictionary*)getSaveDic;
+
+-(instancetype)initWithDic:(NSDictionary*)maindic;
+
 @end

@@ -10,4 +10,6 @@
 
 @interface MainMenuView : NSView
 
+@property(nonatomic,strong)NSView* view;
+
 @end

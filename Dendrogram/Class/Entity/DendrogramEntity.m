@@ -17,6 +17,32 @@
     return self;
 }
 
+-(instancetype)initWithDic:(NSDictionary*)maindic{
+    if (self = [super init]) {
+        if(maindic == NULL)return NULL;
+        
+        _data = [[NSMutableDictionary alloc] initWithDictionary:maindic];
+        
+        _title = [maindic objectForKey:@"title"];
+        if (_title == NULL) return NULL;
+        [_data removeObjectForKey:@"title"];
+        NSLog(@"title:%@",_title);
+        
+        NSArray<NSMutableDictionary*> *savechildren= [_data objectForKey:@"children"];
+        if (savechildren == NULL) return NULL;
+         _children = [[NSMutableArray alloc] init];
+        for (int i = 0; i < savechildren.count; i++) {
+            DendrogramEntity* subEntity = [[DendrogramEntity alloc] initWithDic:savechildren[i]];
+            if (subEntity == NULL) return NULL;
+            [_children addObject:subEntity];
+        }
+            
+    }
+    return self;
+    
+}
+
+
 -(NSMutableDictionary*)getSaveDic{
     NSMutableDictionary* maindic = [[NSMutableDictionary alloc] init];
     [maindic setObject:_title forKey:@"title"];

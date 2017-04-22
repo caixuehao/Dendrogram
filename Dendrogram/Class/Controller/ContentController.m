@@ -33,6 +33,7 @@
         cell.isselected = YES;
         _selectedCell = cell;
         _selectedEntity = cell.entity;
+        SendNotification(UpdateMainView, nil);
     }
     NSLog(@"%@",cell.entity.title);
 }
@@ -43,12 +44,11 @@
     //添加(空格键回车)
     if ((keyCode == 49||keyCode==36)&&_selectedCell) {
         [[MainModel share] addNullCell:_selectedCell.entity];
-        SendNotification(UpdateContenView, nil);
     }else
     //删除（删除键）
     if((keyCode == 51||keyCode==117)&&_selectedCell){
         [[MainModel share] removeCell:_selectedCell.entity];
-        SendNotification(UpdateContenView, nil);
+        
     }
 }
 

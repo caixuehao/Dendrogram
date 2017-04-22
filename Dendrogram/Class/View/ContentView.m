@@ -44,7 +44,7 @@
         lineColor = CColor(0, 0, 0, 1).CGColor;
         
         controller = [[ContentController alloc] init];
-        
+        [MainModel share].contentController = controller;
         [self loadSubViews];
         [self updateView];
         

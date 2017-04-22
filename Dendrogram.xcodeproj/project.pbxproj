@@ -28,6 +28,7 @@
 		FC9B99231EA75680002D31B3 /* InfoEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9B99221EA75680002D31B3 /* InfoEntity.m */; };
 		FC9B99271EA7587D002D31B3 /* MainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9B99261EA7587D002D31B3 /* MainModel.m */; };
 		FC9B992F1EA76605002D31B3 /* backgroundImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FC9B992E1EA76605002D31B3 /* backgroundImage.jpg */; };
+		FCBE747F1EA9B64800056353 /* NSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FCBE747E1EA9B64800056353 /* NSLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,8 @@
 		FC9B99251EA7587D002D31B3 /* MainModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainModel.h; path = Model/MainModel.h; sourceTree = "<group>"; };
 		FC9B99261EA7587D002D31B3 /* MainModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainModel.m; path = Model/MainModel.m; sourceTree = "<group>"; };
 		FC9B992E1EA76605002D31B3 /* backgroundImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backgroundImage.jpg; sourceTree = "<group>"; };
+		FCBE747D1EA9B64800056353 /* NSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSLabel.h; sourceTree = "<group>"; };
+		FCBE747E1EA9B64800056353 /* NSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSLabel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +231,8 @@
 		FC9B99071EA75268002D31B3 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				FCBE747D1EA9B64800056353 /* NSLabel.h */,
+				FCBE747E1EA9B64800056353 /* NSLabel.m */,
 				FC17671F1EA8545B00C0FFB5 /* NSView+Frame.h */,
 				FC1767201EA8545B00C0FFB5 /* NSView+Frame.m */,
 			);
@@ -487,6 +492,7 @@
 				FC9B991A1EA75268002D31B3 /* MainMenuView.m in Sources */,
 				FC1767281EA88CE300C0FFB5 /* CellView.m in Sources */,
 				FC9B99231EA75680002D31B3 /* InfoEntity.m in Sources */,
+				FCBE747F1EA9B64800056353 /* NSLabel.m in Sources */,
 				FC9B99161EA75268002D31B3 /* DendrogramEntity.m in Sources */,
 				FC9B99171EA75268002D31B3 /* MainVC.m in Sources */,
 				FC95E8681EA4B81600833545 /* main.m in Sources */,

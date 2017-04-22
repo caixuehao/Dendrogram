@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "MainWC.h"
+#import "MainModel.h"
 
 @interface AppDelegate ()
 
@@ -31,4 +32,11 @@
     return YES;
 }
 
+
+- (BOOL)application:(NSApplication *)sender openFile:(NSString *)filePath{
+    NSLog(@"打开文件:%@",filePath);
+    //创建通知并发送
+    [[MainModel share] readFile:filePath];
+    return YES;
+}
 @end

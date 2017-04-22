@@ -10,4 +10,6 @@
 
 @interface MainController : NSObject
 
+-(void)selectSavePath:(void (^)(NSString* path))handler;
+
 @end
