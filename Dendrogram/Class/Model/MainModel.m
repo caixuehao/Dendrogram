@@ -8,6 +8,8 @@
 
 #import "MainModel.h"
 #import "Macro.h"
+#import "NSTip.h"
+
 static MainModel *mainModelShare;
 
 @implementation MainModel
@@ -45,8 +47,8 @@ static MainModel *mainModelShare;
 -(NSArray<NSString*>*)dataTypeNameArr{
   return  _infoEntity.dataTypeNameArr;
 }
--(NSArray<NSString*>*)sourceDataDicArr{
-    return _infoEntity.sourceDataDicArr;
+-(NSArray<NSString*>*)dicKeyArr{
+    return _infoEntity.dicKeyArr;
 }
 //添加父节点数据
 -(void)addParentCellData:(DendrogramEntity*)entity{
@@ -95,6 +97,23 @@ static MainModel *mainModelShare;
 
 
 //数据模版
-
+-(void)addkey:(NSString*)key  dataType:(NSInteger)dataType rootDic:(NSString*)rootDic{
+    NSArray* keyarr = [rootDic componentsSeparatedByString:@"."];
+    NSMutableDictionary* tmpDic = _infoEntity.sourceData;
+    for (int i = 1; i < keyarr.count; i++) {
+        tmpDic = [tmpDic objectForKey:keyarr[i]];
+    }
+    if ([tmpDic objectForKey:key] == NULL) {
+        if (dataType == DataTypeDictionary) {
+            [tmpDic setObject:[[NSMutableDictionary alloc] init] forKey:key];
+        }else{
+            [tmpDic setObject:@(dataType) forKey:key];
+        }
+        [_infoEntity updataDicArr];
+        SendNotification(UpdateMainView, nil);
+    }else{
+        [NSTip ShowTip:@"已经有该字段了" title:@"重复添加"];
+    }
+}
 
 @end

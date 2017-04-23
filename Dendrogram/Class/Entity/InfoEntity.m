@@ -7,6 +7,7 @@
 //
 
 #import "InfoEntity.h"
+#import "Macro.h"
 
 @implementation InfoEntity
 -(instancetype)init{
@@ -15,6 +16,7 @@
         _rootDendrogram.title = @"root";
         _sourceData = [[NSMutableDictionary alloc] init];
         _dataTypeNameArr = @[@"数字",@"字符串",@"数字数组",@"字符串数组",@"字典"];
+        [self updataDicArr];
     }
     return self;
 }
@@ -30,6 +32,7 @@
         if (_rootDendrogram == NULL) {
             return NULL;
         }
+        [self updataDicArr];
     }
     return self;
 }
@@ -44,8 +47,8 @@
 -(NSArray<NSString*>*)getDicArr:(NSDictionary*)dic rootKey:(NSString*)rootkey{
     NSMutableArray<NSString *>* dicKeyArr = [[NSMutableArray alloc] init];
     for (NSString* key in dic) {
-        if ([dic isKindOfClass:[NSDictionary class]]) {
-            NSString* str =[NSString stringWithFormat:@"%@.%@",rootkey,key];
+        if ([[dic objectForKey:key] isKindOfClass:[NSDictionary class]]||[[dic objectForKey:key] isKindOfClass:[NSMutableDictionary class]]) {
+            NSString* str =[NSString stringWithFormat:@"%@%@%@",rootkey,ComponentsSeparatedByString,key];
             [dicKeyArr addObject:str];
             [dicKeyArr addObjectsFromArray:[self getDicArr:[dic objectForKey:key] rootKey:str]];
         }

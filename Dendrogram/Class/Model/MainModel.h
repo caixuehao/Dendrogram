@@ -6,7 +6,7 @@
 //  Copyright © 2017年 cxh. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <Cocoa/Cocoa.h>
 #import "InfoEntity.h"
 #import "ContentController.h"
 
@@ -40,7 +40,6 @@
 
 //添加字段
 -(void)addkey:(NSString*)key  dataType:(NSInteger)dataType rootDic:(NSString*)rootDic;
-
 
 
 @end

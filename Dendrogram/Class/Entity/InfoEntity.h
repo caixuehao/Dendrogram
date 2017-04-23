@@ -31,6 +31,6 @@ typedef NS_ENUM(NSInteger,DataType){
 
 -(instancetype)initWithFile:(NSString*)path;
 
--(void)updataSourceDataDicArr;
+-(void)updataDicArr;
 
 @end

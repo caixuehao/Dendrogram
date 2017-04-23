@@ -10,6 +10,8 @@
 #define Macro_h
 
 #define FileTypeName @"json"
+#define ComponentsSeparatedByString  @"."
+
 
 #define SSize   [NSScreen mainScreen].frame.size
 

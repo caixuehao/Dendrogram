@@ -16,6 +16,8 @@
 #import "Macro.h"
 @implementation MainMenuView{
     MainController* mainController;
+    NSMutableDictionary* sourceData;//用来显示的数据模版
+    
     NSScrollView* mainScrView;
     NSTextField* pathTF;
     NSButton* selectPathBtn;
@@ -46,7 +48,26 @@
 
 -(void)updateViewData{
     pathTF.stringValue = [MainModel share].filePath;
-    sourceDataTF.stringValue = [NSString stringWithFormat:@"%@",[MainModel share].infoEntity.sourceData];
+    
+    sourceData = [[NSMutableDictionary alloc] init];
+    [self replaceTypeName:[MainModel share].infoEntity.sourceData outdic:sourceData];
+    NSData* jsondata = [NSJSONSerialization dataWithJSONObject:sourceData options:NSJSONWritingPrettyPrinted error:nil];
+    sourceDataTF.stringValue = [[NSString alloc] initWithData:jsondata encoding:NSUTF8StringEncoding];
+    [addkeyDataPathPUB removeAllItems];
+    [addkeyDataPathPUB addItemsWithTitles:[MainModel share].dicKeyArr];
+}
+
+-(void)replaceTypeName:(NSMutableDictionary*)indic outdic:(NSMutableDictionary*)outdic{
+    for (NSString* key in indic) {
+        if ([[indic objectForKey:key] isKindOfClass:[NSMutableDictionary class]]||[[indic objectForKey:key] isKindOfClass:[NSDictionary class]]) {
+            NSMutableDictionary* dic = [[NSMutableDictionary alloc] init];
+            [outdic setObject:dic forKey:key];
+            [self replaceTypeName:[indic objectForKey:key] outdic:dic];
+        }else{
+            NSInteger type = [[indic objectForKey:key] integerValue];
+            [outdic setObject:[MainModel share].dataTypeNameArr[type] forKey:key];
+        }
+    }
 }
 
 -(void)loadActions{
