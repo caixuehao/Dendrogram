@@ -23,4 +23,6 @@
 
 -(instancetype)initWithDic:(NSDictionary*)maindic;
 
+-(instancetype)initWithSourceData:(NSMutableDictionary*)sourceData;
+
 @end

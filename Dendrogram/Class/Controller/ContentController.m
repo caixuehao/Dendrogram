@@ -28,13 +28,13 @@
 }
 
 -(void)OnClickCell:(CellView*)cell{
-    if (_selectedCell != cell) {
+//    if (_selectedCell != cell) {
         _selectedCell.isselected = NO;
         cell.isselected = YES;
         _selectedCell = cell;
         _selectedEntity = cell.entity;
-        SendNotification(UpdateMainView, nil);
-    }
+        SendNotification(SelectedCellChange, nil);
+//    }
     NSLog(@"%@",cell.entity.title);
 }
 

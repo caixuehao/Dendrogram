@@ -9,5 +9,8 @@
 #import <Cocoa/Cocoa.h>
 
 @interface NSTip : NSObject
+
 +(void)ShowTip:(NSString*)tip title:(NSString*)title;
+
++(void)ShowTip2:(NSString*)tip title:(NSString*)title handler:(void (^)())handler;
 @end

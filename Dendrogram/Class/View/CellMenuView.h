@@ -7,7 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-
+#import "DendrogramEntity.h"
 @interface CellMenuView : NSView
-
+@property(nonatomic,weak)DendrogramEntity* entity;
 @end

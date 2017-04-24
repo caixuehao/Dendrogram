@@ -24,13 +24,19 @@ typedef NS_ENUM(NSInteger,DataType){
 @property(nonatomic,strong)NSMutableDictionary* sourceData;
 
 @property(nonatomic,strong,readonly)NSArray<NSString*>* dataTypeNameArr;
-
+/**
+ *  所有字典key
+ */
 @property(nonatomic,strong,readonly)NSMutableArray<NSString*>* dicKeyArr;
+/**
+ *  所有字段key
+ */
+@property(nonatomic,strong,readonly)NSMutableArray<NSString*>* allKeyArr;
 
 -(void)save:(NSString*)path;
 
 -(instancetype)initWithFile:(NSString*)path;
 
--(void)updataDicArr;
+-(void)updata;
 
 @end

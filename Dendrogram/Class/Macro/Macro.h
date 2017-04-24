@@ -11,14 +11,15 @@
 
 #define FileTypeName @"json"
 #define ComponentsSeparatedByString  @"."
-
+#define TitleKey @"title"
+#define ChildrenKey @"children"
 
 #define SSize   [NSScreen mainScreen].frame.size
 
 #define DefaultWidth 1000
 #define DefaultHeight 618
 #define MinWidth 530
-#define MinHeight 618
+#define MinHeight 309
 
 
 

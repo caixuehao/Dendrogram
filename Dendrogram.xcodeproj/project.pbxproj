@@ -12,6 +12,7 @@
 		FC1767251EA88C0B00C0FFB5 /* ContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1767241EA88C0B00C0FFB5 /* ContentController.m */; };
 		FC1767281EA88CE300C0FFB5 /* CellView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1767271EA88CE300C0FFB5 /* CellView.m */; };
 		FC17672B1EA8BDE300C0FFB5 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC17672A1EA8BDE300C0FFB5 /* MainController.m */; };
+		FC8D922A1EADDBC400FAEB28 /* NSScrTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8D92291EADDBC400FAEB28 /* NSScrTextView.m */; };
 		FC9501D21EABB0FB0058E94A /* NSTip.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9501D11EABB0FB0058E94A /* NSTip.m */; };
 		FC95E8651EA4B81600833545 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC95E8641EA4B81600833545 /* AppDelegate.m */; };
 		FC95E8681EA4B81600833545 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FC95E8671EA4B81600833545 /* main.m */; };
@@ -61,6 +62,8 @@
 		FC1767271EA88CE300C0FFB5 /* CellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellView.m; sourceTree = "<group>"; };
 		FC1767291EA8BDE300C0FFB5 /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
 		FC17672A1EA8BDE300C0FFB5 /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
+		FC8D92281EADDBC400FAEB28 /* NSScrTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSScrTextView.h; sourceTree = "<group>"; };
+		FC8D92291EADDBC400FAEB28 /* NSScrTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSScrTextView.m; sourceTree = "<group>"; };
 		FC9501D01EABB0FB0058E94A /* NSTip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSTip.h; sourceTree = "<group>"; };
 		FC9501D11EABB0FB0058E94A /* NSTip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSTip.m; sourceTree = "<group>"; };
 		FC95E8601EA4B81600833545 /* Dendrogram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dendrogram.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -240,6 +243,8 @@
 				FC1767201EA8545B00C0FFB5 /* NSView+Frame.m */,
 				FC9501D01EABB0FB0058E94A /* NSTip.h */,
 				FC9501D11EABB0FB0058E94A /* NSTip.m */,
+				FC8D92281EADDBC400FAEB28 /* NSScrTextView.h */,
+				FC8D92291EADDBC400FAEB28 /* NSScrTextView.m */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -490,6 +495,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC9501D21EABB0FB0058E94A /* NSTip.m in Sources */,
+				FC8D922A1EADDBC400FAEB28 /* NSScrTextView.m in Sources */,
 				FC1767251EA88C0B00C0FFB5 /* ContentController.m in Sources */,
 				FC9B991D1EA7532F002D31B3 /* ContentView.m in Sources */,
 				FC9B99201EA75449002D31B3 /* CellMenuView.m in Sources */,

@@ -16,7 +16,7 @@
         _rootDendrogram.title = @"root";
         _sourceData = [[NSMutableDictionary alloc] init];
         _dataTypeNameArr = @[@"数字",@"字符串",@"数字数组",@"字符串数组",@"字典"];
-        [self updataDicArr];
+        [self updata];
     }
     return self;
 }
@@ -32,16 +32,28 @@
         if (_rootDendrogram == NULL) {
             return NULL;
         }
-        [self updataDicArr];
+        [self updata];
     }
     return self;
 }
 
-
-
--(void)updataDicArr{
+-(void)updata{
     _dicKeyArr = [[NSMutableArray alloc] initWithArray:@[@"root"]];
     [_dicKeyArr addObjectsFromArray:[self getDicArr:_sourceData rootKey:@"root"]];
+    _allKeyArr = [[NSMutableArray alloc] init];
+    [_allKeyArr addObjectsFromArray:[self getAllKeyArr:_sourceData rootkey:@"root"]];
+}
+
+-(NSArray<NSString*>*)getAllKeyArr:(NSDictionary*)dic rootkey:(NSString*)rootkey{
+     NSMutableArray<NSString *>* keyArr = [[NSMutableArray alloc] init];
+    for (NSString* key in dic) {
+        NSString* str =[NSString stringWithFormat:@"%@%@%@",rootkey,ComponentsSeparatedByString,key];
+        [keyArr addObject:str];
+        if ([[dic objectForKey:key] isKindOfClass:[NSDictionary class]]||[[dic objectForKey:key] isKindOfClass:[NSMutableDictionary class]]) {
+            [keyArr addObjectsFromArray:[self getAllKeyArr:[dic objectForKey:key] rootkey:str]];
+        }
+    }
+    return keyArr;
 }
 
 -(NSArray<NSString*>*)getDicArr:(NSDictionary*)dic rootKey:(NSString*)rootkey{

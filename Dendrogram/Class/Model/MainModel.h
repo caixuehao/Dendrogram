@@ -26,7 +26,8 @@
 @property(nonatomic,strong,readonly)NSArray<NSString*>* dataTypeNameArr;
 //源数据中的字典数组
 @property(nonatomic,strong,readonly)NSArray<NSString*>* dicKeyArr;
-
+//所有字段
+@property(nonatomic,strong,readonly)NSMutableArray<NSString*>* allKeyArr;
 +(MainModel*)share;
 
 //添加一个空节点
@@ -40,6 +41,9 @@
 
 //添加字段
 -(void)addkey:(NSString*)key  dataType:(NSInteger)dataType rootDic:(NSString*)rootDic;
-
+//删除字段
+-(void)delkey:(NSString*)key;
+//修改字段
+-(void)modify:(NSString*)oldkey newkey:(NSString*)newkey rootDic:(NSString*)rootDic;
 
 @end

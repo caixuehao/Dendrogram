@@ -28,10 +28,16 @@
     
     NSTextField* addkeyTF;
     NSButton* addkeyBtn;
-    NSPopUpButton* addkeyDataPathPUB;
-    NSPopUpButton* addkeyDataTypePUB;
+    NSPopUpButton* addkey_dataPathPUB;
+    NSPopUpButton* addkey_dataTypePUB;
     
+    NSPopUpButton* delkey_AllkeyPUB;
+    NSButton* delkeyBtn;
     
+    NSPopUpButton* modify_AllkeyPUB;
+    NSButton* modifyBtn;
+    NSPopUpButton* modify_dataPathPUB;
+    NSTextField* modifyTF;
 }
 
 -(instancetype)init{
@@ -53,8 +59,15 @@
     [self replaceTypeName:[MainModel share].infoEntity.sourceData outdic:sourceData];
     NSData* jsondata = [NSJSONSerialization dataWithJSONObject:sourceData options:NSJSONWritingPrettyPrinted error:nil];
     sourceDataTF.stringValue = [[NSString alloc] initWithData:jsondata encoding:NSUTF8StringEncoding];
-    [addkeyDataPathPUB removeAllItems];
-    [addkeyDataPathPUB addItemsWithTitles:[MainModel share].dicKeyArr];
+    
+    [addkey_dataPathPUB removeAllItems];
+    [addkey_dataPathPUB addItemsWithTitles:[MainModel share].dicKeyArr];
+    [delkey_AllkeyPUB removeAllItems];
+    [delkey_AllkeyPUB addItemsWithTitles:[MainModel share].allKeyArr];
+    [modify_AllkeyPUB removeAllItems];
+    [modify_AllkeyPUB addItemsWithTitles:[MainModel share].allKeyArr];
+    [modify_dataPathPUB removeAllItems];
+    [modify_dataPathPUB addItemsWithTitles:[MainModel share].dicKeyArr];
 }
 
 -(void)replaceTypeName:(NSMutableDictionary*)indic outdic:(NSMutableDictionary*)outdic{
@@ -76,11 +89,15 @@
     delCellBtn.target = self;
     saveFileBtn.target = self;
     addkeyBtn.target = self;
+    delkeyBtn.target = self;
+    modifyBtn.target = self;
     [selectPathBtn setAction:@selector(selectPath)];
     [addCellBtn setAction:@selector(addCell)];
     [delCellBtn setAction:@selector(delCell)];
     [saveFileBtn setAction:@selector(saveFile)];
     [addkeyBtn setAction:@selector(addkey)];
+    [delkeyBtn setAction:@selector(delkey)];
+    [modifyBtn setAction:@selector(modify)];
 }
 
 
@@ -97,10 +114,14 @@
     [[MainModel share] saveFile];
 }
 -(void)addkey{
-    [[MainModel share] addkey:addkeyTF.stringValue dataType:addkeyDataTypePUB.indexOfSelectedItem rootDic:addkeyDataPathPUB.title];
+    [[MainModel share] addkey:addkeyTF.stringValue dataType:addkey_dataTypePUB.indexOfSelectedItem rootDic:addkey_dataPathPUB.title];
 }
-
-
+-(void)delkey{
+    [[MainModel share] delkey:delkey_AllkeyPUB.title];
+}
+-(void)modify{
+    [[MainModel share] modify:modify_AllkeyPUB.title newkey:modifyTF.stringValue rootDic:modify_dataPathPUB.title];
+}
 
 
 
@@ -108,7 +129,7 @@
     mainScrView = ({
         NSScrollView* scrView = [[NSScrollView alloc] init];
         [scrView setHasVerticalScroller:YES];
-        [scrView setHasHorizontalScroller:YES];
+//        [scrView setHasHorizontalScroller:YES];
         [self addSubview:scrView];
         
         NSClipView* clipView = [[NSClipView alloc] init];
@@ -170,7 +191,7 @@
     });
     sourceDataTF = ({
         NSTextField* textfield = [[NSTextField alloc] init];
-        textfield.enabled = NO;
+        textfield.editable = NO;
         [dataBox.contentView addSubview:textfield];
         textfield;
     });
@@ -191,25 +212,74 @@
         [addkeyBox.contentView addSubview:btn];
         btn;
     });
-    addkeyDataPathPUB = ({
+    addkey_dataPathPUB = ({
         NSPopUpButton* pub = [[NSPopUpButton alloc] initWithFrame:NSMakeRect(0, 0, 120, 25)];
         [pub addItemsWithTitles:@[@"root"]];
         [addkeyBox.contentView addSubview:pub];
         pub;
     });
-    addkeyDataTypePUB = ({
+    addkey_dataTypePUB = ({
         NSPopUpButton* pub = [[NSPopUpButton alloc] initWithFrame:NSMakeRect(130, 0, 90, 25)];
         [pub addItemsWithTitles:[MainModel share].dataTypeNameArr];
         [addkeyBox.contentView addSubview:pub];
         pub;
     });
+    NSBox* delkeyBox = ({
+        NSBox* box = [[NSBox alloc] init];
+        box.title = @"删除字段:(字段名字，按钮)";
+        [_view addSubview:box];
+        box;
+    });
+    delkey_AllkeyPUB =({
+        NSPopUpButton* pub = [[NSPopUpButton alloc] initWithFrame:NSMakeRect(0, 0, 125, 25)];
+        [delkeyBox.contentView addSubview:pub];
+        pub;
+    });
+    delkeyBtn = ({
+        NSButton* btn = [[NSButton alloc] initWithFrame:NSMakeRect(130, 0, 90, 25)];
+        [btn setTitle:@"删除字段"];
+        [delkeyBox.contentView addSubview:btn];
+        btn;
+    });
     
+    NSBox* modifyBox = ({
+        NSBox* box = [[NSBox alloc] init];
+        box.title = @"修改字段名字:(字段，按钮，位置，新名字)";
+        [_view addSubview:box];
+        box;
+    });
+    modify_AllkeyPUB =({
+        NSPopUpButton* pub = [[NSPopUpButton alloc] initWithFrame:NSMakeRect(0, 30, 125, 25)];
+        [modifyBox.contentView addSubview:pub];
+        pub;
+    });
+    modifyBtn = ({
+        NSButton* btn = [[NSButton alloc] initWithFrame:NSMakeRect(130, 30, 90, 25)];
+        [btn setTitle:@"修改字段"];
+        [modifyBox.contentView addSubview:btn];
+        btn;
+    });
+    modify_dataPathPUB = ({
+        NSPopUpButton* pub = [[NSPopUpButton alloc] initWithFrame:NSMakeRect(0, 0, 120, 25)];
+        [pub addItemsWithTitles:@[@"root"]];
+        [modifyBox.contentView addSubview:pub];
+        pub;
+    });
+    modifyTF = ({
+        NSTextField* textfield = [[NSTextField alloc] initWithFrame:NSMakeRect(130, 0, 120, 25)];
+        [modifyBox.contentView addSubview:textfield];
+        textfield;
+    });
     
     //layout
     [mainScrView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self);
     }];
     _view.frame = NSMakeRect(0, 0, 230, 600);
+//    [_view mas_remakeConstraints:^(MASConstraintMaker *make) {
+//        make.top.width.equalTo(mainScrView.contentView);
+//        make.height.equalTo(@600);
+//    }];
     [pathBox mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.left.top.equalTo(_view);
         make.width.equalTo(_view);
@@ -255,5 +325,19 @@
         make.left.right.equalTo(_view);
         make.height.equalTo(@80);
     }];
+    [delkeyBox mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(addkeyBox.mas_bottom).offset(30);
+        make.left.right.equalTo(_view);
+        make.height.equalTo(@45);
+    }];
+    [modifyBox mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(delkeyBox.mas_bottom).offset(30);
+        make.left.right.equalTo(_view);
+        make.height.equalTo(@80);
+    }];
+}
+
+-(void)setFrame:(NSRect)frame{
+    [super setFrame:frame];
 }
 @end
