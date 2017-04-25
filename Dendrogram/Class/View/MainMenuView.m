@@ -46,6 +46,8 @@
         [self loadSubViews];
         [self loadActions];
         [self updateViewData];
+//        addkeyTF.editable = NO;
+//        modifyTF.editable = NO;
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateViewData) name:UpdateMainView object:nil];
     }
     return self;

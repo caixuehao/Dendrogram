@@ -34,6 +34,7 @@
         _selectedCell = cell;
         _selectedEntity = cell.entity;
         SendNotification(SelectedCellChange, nil);
+        [cell.window makeFirstResponder:nil];
 //    }
     NSLog(@"%@",cell.entity.title);
 }

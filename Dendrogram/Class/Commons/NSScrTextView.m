@@ -40,5 +40,10 @@
     
     // Drawing code here.
 }
-
+-(void)setString:(NSString *)string{
+    _textView.string = string;
+}
+-(NSString*)string{
+    return _textView.string;
+}
 @end

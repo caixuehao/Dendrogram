@@ -12,4 +12,6 @@
 
 @property(nonatomic,strong)NSTextView* textView;
 
+@property(nonatomic,weak)NSString* string;
+
 @end
