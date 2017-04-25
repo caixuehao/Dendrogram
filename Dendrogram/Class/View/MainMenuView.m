@@ -9,6 +9,7 @@
 #import "MainMenuView.h"
 #import "MainController.h"
 
+#import "NSScrTextView.h"
 #import "NSLabel.h"
 #import <Masonry.h>
 #import "NSView+Frame.h"
@@ -24,7 +25,7 @@
     NSButton* addCellBtn;
     NSButton* delCellBtn;
     NSButton* saveFileBtn;
-    NSTextField* sourceDataTF;
+    NSScrTextView* sourceDataSTV;
     
     NSTextField* addkeyTF;
     NSButton* addkeyBtn;
@@ -60,7 +61,8 @@
     sourceData = [[NSMutableDictionary alloc] init];
     [self replaceTypeName:[MainModel share].infoEntity.sourceData outdic:sourceData];
     NSData* jsondata = [NSJSONSerialization dataWithJSONObject:sourceData options:NSJSONWritingPrettyPrinted error:nil];
-    sourceDataTF.stringValue = [[NSString alloc] initWithData:jsondata encoding:NSUTF8StringEncoding];
+    NSString* str =[[NSString alloc] initWithData:jsondata encoding:NSUTF8StringEncoding];
+    sourceDataSTV.string =str?str:@"";
     
     [addkey_dataPathPUB removeAllItems];
     [addkey_dataPathPUB addItemsWithTitles:[MainModel share].dicKeyArr];
@@ -191,11 +193,11 @@
         [_view addSubview:box];
         box;
     });
-    sourceDataTF = ({
-        NSTextField* textfield = [[NSTextField alloc] init];
-        textfield.editable = NO;
-        [dataBox.contentView addSubview:textfield];
-        textfield;
+    sourceDataSTV = ({
+        NSScrTextView* stv = [[NSScrTextView alloc] init];
+        stv.textView.editable = NO;
+        [dataBox.contentView addSubview:stv];
+        stv;
     });
     NSBox* addkeyBox = ({
         NSBox* box = [[NSBox alloc] init];
@@ -318,7 +320,7 @@
         make.left.right.equalTo(_view);
         make.height.equalTo(@200);
     }];
-    [sourceDataTF mas_remakeConstraints:^(MASConstraintMaker *make) {
+    [sourceDataSTV mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.top.left.equalTo(dataBox.contentView).offset(3);
         make.right.bottom.equalTo(dataBox.contentView).offset(-3);
     }];

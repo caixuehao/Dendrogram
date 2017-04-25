@@ -15,6 +15,7 @@
 #import "NSTip.h"
 
 @implementation CellMenuView{
+    NSTextField* titleTF;
     NSScrTextView* scrTextView;
     NSScrTextView* logScrTextView;
     NSButton* okbtn;
@@ -33,6 +34,8 @@
 }
 
 -(void)saveModify{
+    if(_entity == NULL)return;
+    
     NSData* jsondata = [scrTextView.textView.string dataUsingEncoding:NSUTF8StringEncoding];
     NSError *error;
     NSDictionary* indic = [NSJSONSerialization JSONObjectWithData:jsondata options:NSJSONReadingMutableLeaves error:&error];
@@ -45,7 +48,6 @@
     
     logScrTextView.string = @"";
     //判断数据类型
-    NSLog(@"%@",indic);
    [self comparedDictionary:indic sourcedic:[MainModel share].infoEntity.sourceData];
     if(logScrTextView.string.length>0){
         [NSTip ShowTip:@"" title:@"请检查错误"];
@@ -54,11 +56,17 @@
     //复制字典将全该成可变的
     NSMutableDictionary* outdic = [[NSMutableDictionary alloc] init];
     [self traversalCopyDictionary:indic outdic:outdic];
-    
     //给缺少的赋空值
     [self traversalCopyNUll:outdic sourcedic:[MainModel share].infoEntity.sourceData];
-    _entity.data = outdic;
     
+    
+    
+    _entity.data = outdic;
+    if ([_entity.title isEqualToString:titleTF.stringValue] == NO) {
+        _entity.title = titleTF.stringValue;
+        SendNotification(UpdateContenView, nil);
+    }
+
 }
 //判断数据类型
 -(void)comparedDictionary:(NSDictionary*)indic sourcedic:(NSMutableDictionary*)sourcedic{
@@ -67,7 +75,7 @@
         if ([value isKindOfClass:[NSDictionary class]]||[value isKindOfClass:[NSMutableDictionary class]]) {
             if([sourcedic objectForKey:key]){
                 if ([[sourcedic objectForKey:key] isKindOfClass:[NSMutableDictionary class]]) {
-                    [self traversalCopyDictionary:[indic objectForKey:key] outdic:[sourcedic objectForKey:key]];
+                    [self comparedDictionary:[indic objectForKey:key] sourcedic:[sourcedic objectForKey:key]];
                 }else{
                      logScrTextView.string = [NSString stringWithFormat:@"%@%@字段应为字典类型。\n",logScrTextView.string,key];
                 }
@@ -164,11 +172,18 @@
 -(void)setEntity:(DendrogramEntity *)entity{
     _entity = entity;
     if (entity) {
+        titleTF.stringValue = entity.title;
         NSData* jsondata = [NSJSONSerialization dataWithJSONObject:_entity.data options:NSJSONWritingPrettyPrinted error:nil];
         scrTextView.textView.string = [[NSString alloc] initWithData:jsondata encoding:NSUTF8StringEncoding];
     }
 }
 -(void)loadSubViews{
+    titleTF = ({
+        NSTextField* tf = [[NSTextField alloc] init];
+        [self addSubview:tf];
+        tf;
+    });
+    
     scrTextView =({
         NSScrTextView* st = [[NSScrTextView alloc] init];
         [self addSubview:st];
@@ -187,8 +202,15 @@
         btn;
     });
     
+    [titleTF mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self).offset(10);
+        make.left.right.equalTo(self);
+        make.height.equalTo(@25);
+    }];
+    
     [scrTextView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.top.left.right.equalTo(self);
+        make.top.equalTo(titleTF.mas_bottom).offset(10);
+        make.left.right.equalTo(self);
         make.bottom.equalTo(self).offset(-170);
     }];
     [logScrTextView mas_remakeConstraints:^(MASConstraintMaker *make) {

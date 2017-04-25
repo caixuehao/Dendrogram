@@ -20,6 +20,7 @@
 }
 -(instancetype)initWithSourceData:(NSMutableDictionary*)sourceData{
     if (self = [super init]) {
+        _title = @"";
         _data = [[NSMutableDictionary alloc] init];
         _children = [[NSMutableArray alloc] init];
         [self copydata:sourceData mydata:_data];
@@ -56,26 +57,46 @@
 -(instancetype)initWithDic:(NSDictionary*)maindic{
     if (self = [super init]) {
         if(maindic == NULL)return NULL;
+        _data = [[NSMutableDictionary alloc] init];
+        NSMutableDictionary* indic = [[NSMutableDictionary alloc] initWithDictionary:maindic];
         
-        _data = [[NSMutableDictionary alloc] initWithDictionary:maindic];
-        
-        _title = [maindic objectForKey:TitleKey];
+        //赋值title
+        _title = [indic objectForKey:TitleKey];
         if (_title == NULL) return NULL;
-        [_data removeObjectForKey:TitleKey];
+        
+        [indic removeObjectForKey:TitleKey];
         NSLog(@"title:%@",_title);
         
-        NSArray<NSMutableDictionary*> *savechildren= [_data objectForKey:ChildrenKey];
+        //赋值子节点children
+        NSArray<NSDictionary*> *savechildren= [indic objectForKey:ChildrenKey];
         if (savechildren == NULL) return NULL;
+        
          _children = [[NSMutableArray alloc] init];
         for (int i = 0; i < savechildren.count; i++) {
             DendrogramEntity* subEntity = [[DendrogramEntity alloc] initWithDic:savechildren[i]];
             if (subEntity == NULL) return NULL;
             [_children addObject:subEntity];
         }
-            
+        [indic removeObjectForKey:ChildrenKey];
+        
+        [self traversalCopyDictionary:indic outdic:_data];
     }
     return self;
 }
+
+//遍历复制字典
+-(void)traversalCopyDictionary:(NSDictionary*)indic outdic:(NSMutableDictionary*)outdic{
+    for (NSString* key in indic) {
+        if ([[indic objectForKey:key] isKindOfClass:[NSDictionary class]]||[[indic objectForKey:key] isKindOfClass:[NSMutableDictionary class]]) {
+            [outdic setObject:[[NSMutableDictionary alloc] init] forKey:key];
+            [self traversalCopyDictionary:[indic objectForKey:key] outdic:[outdic objectForKey:key]];
+        }else{
+            [outdic setValue:[indic objectForKey:key] forKey:key];
+        }
+    }
+}
+
+
 
 
 -(NSMutableDictionary*)getSaveDic{

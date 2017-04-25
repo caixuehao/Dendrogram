@@ -23,11 +23,17 @@
 
 -(instancetype)initWithFile:(NSString*)path{
     if (self = [super init]) {
+         _dataTypeNameArr = @[@"数字",@"字符串",@"数字数组",@"字符串数组",@"字典"];
+        
         NSDictionary* maindic = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path] options:NSJSONReadingMutableLeaves error:nil];
-        _sourceData = [maindic objectForKey:@"sourceData"];
-        if (_sourceData == NULL) {
+        _sourceData = [[NSMutableDictionary alloc] init];
+        NSDictionary* indic = [maindic objectForKey:@"sourceData"];
+        [self traversalCopyDictionary:indic outdic:_sourceData];
+        if ([maindic objectForKey:@"sourceData"] == NULL) {
             return NULL;
         }
+        
+        
         _rootDendrogram = [[DendrogramEntity alloc] initWithDic:[maindic objectForKey:@"rootDendrogram"]];
         if (_rootDendrogram == NULL) {
             return NULL;
@@ -36,6 +42,20 @@
     }
     return self;
 }
+
+//遍历复制字典
+-(void)traversalCopyDictionary:(NSDictionary*)indic outdic:(NSMutableDictionary*)outdic{
+    for (NSString* key in indic) {
+        if ([[indic objectForKey:key] isKindOfClass:[NSDictionary class]]||[[indic objectForKey:key] isKindOfClass:[NSMutableDictionary class]]) {
+            [outdic setObject:[[NSMutableDictionary alloc] init] forKey:key];
+            [self traversalCopyDictionary:[indic objectForKey:key] outdic:[outdic objectForKey:key]];
+        }else{
+            [outdic setValue:[indic objectForKey:key] forKey:key];
+        }
+    }
+}
+
+
 
 -(void)updata{
     _dicKeyArr = [[NSMutableArray alloc] initWithArray:@[@"root"]];
